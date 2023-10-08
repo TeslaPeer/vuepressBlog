@@ -5,14 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    	"docs:dev": "vuepress dev docs",
-      "docs:build": "vuepress build docs",
-      "deploy": "bash deploy.sh"
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "deploy": "bash deploy.sh"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "vuepress": "^2.0.0-beta.67"
+  },
+  "dependencies": {
+    "vuepress-theme-reco": "^2.0.0-beta.68"
   }
 }
