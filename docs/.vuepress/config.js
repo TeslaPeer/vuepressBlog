@@ -1,49 +1,83 @@
 import { defineUserConfig } from 'vuepress'
 import { recoTheme } from 'vuepress-theme-reco'
+import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance'
 export default defineUserConfig({
   lang: 'zh-CN',
   logo:'/images/hero.png',
   title: 'teslapeerBlog',
   description: '这是我的第一个 VuePress 站点',
   theme: recoTheme({
-    author: 作者昵称,
+    author: '作者昵称',
     authorAvatar: '/images/hero.png',
+    algolia: {
+      appId: '',
+      apiKey: '',
+      indexName: 'xxx',
+      inputSelector: '### REPLACE ME ####',
+      algoliaOptions: { 'facetFilters': ["lang:$LANG"] },
+      debug: false // Set debug to true if you want to inspect the dropdown
+    },
     navbar : [
-      { text: '指南', link: '/docs/docs/系列1/分组1-1/笔记1', icon: 'Compass' },
+      { text: '指南', link: '/guide/项目简介.md', icon: 'Compass' },
       { 
         text: '笔记',
         icon: 'Document',
         children: [
           {
-            text: '系列1',
+            text: '计算机网络',
             children: [
-              { text: '分组1-1', link: '/docs/docs/系列1/分组1-1' },
-              { text: '分组1-2', link: '/docs/docs/系列1/分组1-2' }
-            ],
+              { text: 'TCP&IP协议簇',link: '/docs/work/计算机网络/TCP&IP协议簇.md' }
+            ]
           },
-          {
-            text: '系列2',
+          { 
+            text: 'C++语言', 
             children: [
-              { text: '分组2-1', link: '/docs/docs/系列2/分组2-1' },
-              { text: '分组2-2', link: '/docs/docs/系列2/分组2-2' }
-            ],
-          },
-        ],
-      
+              { text: 'C&C++基础', link: '/docs/work/C++语言/C&C++基础.md' }
+            ]
+          }
+        ]
+      },
+      { 
+        text: '博客',
+        icon: 'Blog', 
+        link: '/posts'
+      },
+      { 
+        text: '时间轴',
+        icon: 'EventSchedule', 
+        link: '/timeline'
+      },
+      { 
+        text: '工具箱',
+        icon: 'ToolBox', 
+        link: '/link/links'
       }
+
     ],
     // 自动设置blogs分类
     autoSetBlogCategories: true,
-    // 自动将分类和标签添加至头部导航条
-    autoAddCategoryToNavbar: {
-      location: 1, // 默认 0
-      categoryText: '分类', // 默认 categories
-      tagText: '标签' // 默认 tags
-    },
-    // 当 autoAddCategoryToNavbar 为 true 时，则全部取默认值
-    autoAddCategoryToNavbar: true,
+
     // 自动设置docs分类
     autoSetSeries: true,
     catalogTitle: '本页目录'
-  })
+  }),
+  plugins: [
+    mdEnhancePlugin({
+      tabs: true,
+      // 启用代码块分组
+      codetabs: true,
+      // 启用下角标功能
+      //sub: true,
+      // 启用上角标
+      //sup: true,
+      // 启用图片标记
+      //imgMark: true,
+      // 开启卡片支持
+      card: true,
+      // 启用图表
+      chart: true,
+      // 使用 mathjax 启用 TeX 支持
+      mathjax: true
+    })
+  ]
 })
