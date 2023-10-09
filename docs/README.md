@@ -10,7 +10,7 @@ bannerBrand: # bannerBrand 模块的配置
   title: teslapeer's Blogs
   description: 为天地立心，为生民立命，为往圣继绝学，为万世开太平
   tagline: 日常杂碎、学习笔记、个人知识库。
-
+  bgImage: '/images/bg.png'
 
 blog: # blog 模块的配置
   socialLinks: # 社交地址

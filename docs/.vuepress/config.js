@@ -18,7 +18,7 @@ export default defineUserConfig({
       debug: false // Set debug to true if you want to inspect the dropdown
     },
     navbar : [
-      { text: '指南', link: '/guide/项目简介.md', icon: 'Compass' },
+      { text: '指南', link: '/guide/introduce.html', icon: 'Compass' },
       { 
         text: '笔记',
         icon: 'Document',
@@ -26,13 +26,13 @@ export default defineUserConfig({
           {
             text: '计算机网络',
             children: [
-              { text: 'TCP&IP协议簇',link: '/docs/work/计算机网络/TCP&IP协议簇.md' }
+              { text: 'TCP&IP协议簇',link: '/work/computer_network/TCP&IP_Protocols.html'}
             ]
           },
           { 
             text: 'C++语言', 
             children: [
-              { text: 'C&C++基础', link: '/docs/work/C++语言/C&C++基础.md' }
+              { text: 'C&C++基础', link: '/work/C++_Language/C&C++_Fundamentals.html' }
             ]
           }
         ]
@@ -63,9 +63,9 @@ export default defineUserConfig({
   }),
   plugins: [
     mdEnhancePlugin({
-      tabs: true,
+      //tabs: true,
       // 启用代码块分组
-      codetabs: true,
+      //codetabs: true,
       // 启用下角标功能
       //sub: true,
       // 启用上角标
